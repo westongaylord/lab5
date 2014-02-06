@@ -1,5 +1,6 @@
 'use strict';
 
+
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
@@ -8,8 +9,21 @@ $(document).ready(function() {
 /*
  * Function that is called when the document is ready.
  */
+
+
 function initializePage() {
 	console.log("Javascript connected!");
+	$(".friend a h3").click(changeName);
+}
+
+
+function changeName(event) {
+	event.preventDefault();
+	//console.log($(this).text());
+	var currentName = $(this).text();
+	console.log(currentName);
+	var newName = anagrammedName(currentName);
+	$(this).text(newName);
 }
 
 function anagrammedName(name) {
